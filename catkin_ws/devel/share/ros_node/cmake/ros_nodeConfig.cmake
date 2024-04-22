@@ -1,0 +1,1 @@
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/share/ros_node/cmake/ros_nodeConfig.cmake

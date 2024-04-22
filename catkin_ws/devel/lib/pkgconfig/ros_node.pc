@@ -1,0 +1,1 @@
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/pkgconfig/ros_node.pc
