@@ -11,8 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
   roscpp
+  cv_bridge
 )
 find_package(Eigen3 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 
 ## System dependencies are found with CMake's conventions
@@ -121,6 +123,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 include_directories(${EIGEN3_INCLUDE_DIR})
 
@@ -139,6 +142,12 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(ros_node
   src/ros_node.cpp
+  src/rp_base/dmap.cpp
+  src/rp_base/draw_helpers.cpp
+  src/rp_base/grid_map.cpp
+  src/rp_base/grid_mapping.cpp
+  src/rp_base/laser_scan.cpp
+  src/rp_loc/dmap_localizer.cpp
 )
 
 ## Rename C++ executable without prefix
@@ -154,6 +163,7 @@ add_executable(ros_node
 ## Specify libraries to link a library or executable target against
 target_link_libraries(ros_node
   ${catkin_LIBRARIES}
+  ${OpenCV_LIBRARIES}
 )
 
 #############

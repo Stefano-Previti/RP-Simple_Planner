@@ -70,34 +70,221 @@ CMakeFiles/ros_node.dir/src/ros_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/ros_node.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/ros_node.cpp -o CMakeFiles/ros_node.dir/src/ros_node.cpp.s
 
+CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/dmap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/dmap.cpp
+
+CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/dmap.cpp > CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/dmap.cpp -o CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.s
+
+CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/draw_helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/draw_helpers.cpp
+
+CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/draw_helpers.cpp > CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/draw_helpers.cpp -o CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.s
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_map.cpp
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_map.cpp > CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_map.cpp -o CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.s
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_mapping.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_mapping.cpp
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_mapping.cpp > CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/grid_mapping.cpp -o CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.s
+
+CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/laser_scan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/laser_scan.cpp
+
+CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/laser_scan.cpp > CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_base/laser_scan.cpp -o CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.s
+
+CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o: CMakeFiles/ros_node.dir/flags.make
+CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o -c /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.cpp
+
+CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.cpp > CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.i
+
+CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.cpp -o CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.s
+
 # Object files for target ros_node
 ros_node_OBJECTS = \
-"CMakeFiles/ros_node.dir/src/ros_node.cpp.o"
+"CMakeFiles/ros_node.dir/src/ros_node.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o" \
+"CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o"
 
 # External object files for target ros_node
 ros_node_EXTERNAL_OBJECTS =
 
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/ros_node.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_base/dmap.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_base/draw_helpers.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_base/grid_map.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_base/grid_mapping.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_base/laser_scan.cpp.o
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/src/rp_loc/dmap_localizer.cpp.o
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/build.make
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libroscpp.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libcv_bridge.so
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/librosconsole.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/librosconsole_log4cxx.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/librosconsole_backend_interface.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libxmlrpcpp.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/librostime.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /opt/ros/noetic/lib/libcpp_common.so
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0
+/home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0
 /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node: CMakeFiles/ros_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lattinone/RP-Simple_Planner/catkin_ws/build/ros_node/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ros_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

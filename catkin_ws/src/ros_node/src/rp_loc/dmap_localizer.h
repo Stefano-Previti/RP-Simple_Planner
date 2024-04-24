@@ -1,9 +1,9 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include "rp_base/dmap.h"
-#include "rp_base/grid_mapping.h"
-#include "rp_base/grid_map.h"
+#include "../rp_base/dmap.h"
+#include "../rp_base/grid_mapping.h"
+#include "../rp_base/grid_map.h"
 
 using Eigen::Vector2f;
 using Eigen::Isometry2f;

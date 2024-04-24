@@ -1,2 +1,2 @@
-add_subdirectory(rp_base)
-add_subdirectory(rp_loc)
+add_subdirectory(src/rp_base)
+add_subdirectory(src/rp_loc)
