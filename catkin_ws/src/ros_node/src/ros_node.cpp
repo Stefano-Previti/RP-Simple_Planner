@@ -1,5 +1,7 @@
 #include <ros/ros.h>
 #include <nav_msgs/OccupancyGrid.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <cmath>
 #include <limits> 
 #include "rp_loc/dmap_localizer.h"
@@ -10,6 +12,7 @@ double map_width;
 double map_height;
 std::vector<double> dmap_vector;
 nav_msgs::OccupancyGrid::ConstPtr global_map;
+bool initial_pose_received = false, goal_pose_received = false;
 
 ////////////// Definition of useful structures/////////////
 struct Pose {
@@ -31,15 +34,15 @@ struct Node {
 /////////////////////////Utility functions//////////////////////
 Pose worldToGrid(const Pose& world_pose) {
     Pose grid_pose;
-    grid_pose.x = (world_x - global_map->info.origin.position.x) / map_resolution;
-    grid_pose.y = (world_y - global_map->info.origin.position.y) / map_resolution;
+    grid_pose.x = (world_pose.x - global_map->info.origin.position.x) / map_resolution;
+    grid_pose.y = (world_pose.x - global_map->info.origin.position.y) / map_resolution;
     return grid_pose;
 }
 
 Pose gridToWorld(const Pose& grid_pose) {
     Pose world_pose;
-    world_pose.x = global_map->info.origin.position.x + grid_x * map_resolution;
-    world_pose.y = global_map->info.origin.position.y + grid_y * map_resolution;
+    world_pose.x = global_map->info.origin.position.x + grid_pose.x * map_resolution;
+    world_pose.y = global_map->info.origin.position.y + grid_pose.x * map_resolution;
     return world_pose;
 }
 
@@ -109,7 +112,21 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map)
     map_resolution = map->info.resolution;
     ROS_INFO("Received Map from map_server: resolution= %lf,width=%lf,height=%lf", map_resolution,map_width,map_height);
 }
+Pose initial_pose, goal_pose;
+void initialPoseCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg) {
+    initial_pose.x = msg->pose.pose.position.x;
+    initial_pose.y = msg->pose.pose.position.y;
+    initial_pose_received = true;
+    ROS_INFO("Received initial pose: x=%f, y=%f", initial_pose.x, initial_pose.y);
+}
 
+void goalPoseCallback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
+    goal_pose.x = msg->pose.position.x;
+    goal_pose.y = msg->pose.position.y;
+    goal_pose_received = true;
+    ROS_INFO("Received goal pose: x=%f, y=%f", goal_pose.x, goal_pose.y);
+
+}
 
 
 
@@ -119,31 +136,33 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map)
    int main(int argc, char **argv) {
     ros::init(argc, argv, "my_node");
 
+    // Parse user arguments
     double dmax = atof(argv[1]);
     double x = atof(argv[2]);
     double y = atof(argv[3]);
 
+    // NodeHandle and Subscriber setup
     ros::NodeHandle nh;
+    ros::Subscriber initial_pose_subscriber = nh.subscribe("/initialpose", 1, initialPoseCallback);
+    ros::Subscriber goal_pose_subscriber = nh.subscribe("/move_base_simple/goal", 1, goalPoseCallback);
     ros::Subscriber map_subscriber = nh.subscribe("/map", 1, mapCallback);
     ros::Rate rate(1); 
 
-    
-    // Wait for the map to be received
-    ros::Time start_time = ros::Time::now();
+    // Wait for initial and goal poses
+    while ((!initial_pose_received || !goal_pose_received) && ros::ok()) {
+        ros::spinOnce();
+        rate.sleep();
+        ROS_INFO("Waiting for initial and goal poses...");
+    }
+
+    // Wait for the map
     while (!global_map && ros::ok()) {
         ros::spinOnce();
         rate.sleep();
-        if ((ros::Time::now() - start_time) > ros::Duration(10.0)) {
-            ROS_ERROR("Timeout while waiting for the map.");
-            return -1;
-        }
+        ROS_INFO("Waiting for map...");
     }
 
-    if (!global_map) {
-        ROS_ERROR("No map received.");
-        return -1;
-    }
-
+    // Load and process the distance map
     try {
         dmap_vector = distance_map("/home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/DIAG_map.png", map_resolution, dmax);
     } catch (const std::exception& e) {
@@ -151,19 +170,15 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map)
         return -1;
     }
 
-    // Continue to process and report cost
-    while (ros::ok()) {
-        if (!dmap_vector.empty()) {
-            try {
-                double cost = cost_function(x, y);
-                ROS_INFO("The cost at position x=%lf and y=%lf is cost=%lf", x, y, cost);
-            } catch (const std::exception& e) {
-                ROS_ERROR("Exception caught while computing cost: %s", e.what());
-            }
-        }
-        ros::spinOnce();
-        rate.sleep();
+    // Calculate and report cost
+    try {
+        double cost = cost_function(x, y);
+        ROS_INFO("The cost at position x=%lf, y=%lf is cost=%lf", x, y, cost);
+    } catch (const std::exception& e) {
+        ROS_ERROR("Exception caught while computing cost: %s", e.what());
     }
 
+    ros::spin();
     return 0;
 }
+

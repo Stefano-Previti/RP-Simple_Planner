@@ -1,6 +1,0 @@
-[31m[1mCMake Error[0m at /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/CMakeLists.txt:124:
-  Parse error.  Expected a command name, got unquoted argument with text
-  "${{catkin_INCLUDE_DIRS}}".
-
-
-make: *** [Makefile:574: cmake_check_build_system] Error 1

@@ -10,6 +10,9 @@ CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /home/lattinone/RP-Simple_Planner/ca
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.h
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Point.h
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Pose.h
+CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseStamped.h
+CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
+CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/geometry_msgs/Quaternion.h
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/nav_msgs/MapMetaData.h
 CMakeFiles/ros_node.dir/src/ros_node.cpp.o: /opt/ros/noetic/include/nav_msgs/OccupancyGrid.h

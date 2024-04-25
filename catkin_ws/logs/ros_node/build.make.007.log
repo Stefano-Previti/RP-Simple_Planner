@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target ros_node[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/ros_node.dir/src/ros_node.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/lattinone/RP-Simple_Planner/catkin_ws/devel/.private/ros_node/lib/ros_node/ros_node[0m
-[100%] Built target ros_node

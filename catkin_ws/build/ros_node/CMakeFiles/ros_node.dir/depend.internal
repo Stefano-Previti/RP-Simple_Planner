@@ -11,6 +11,9 @@ CMakeFiles/ros_node.dir/src/ros_node.cpp.o
  /home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/rp_loc/dmap_localizer.h
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/Pose.h
+ /opt/ros/noetic/include/geometry_msgs/PoseStamped.h
+ /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
  /opt/ros/noetic/include/geometry_msgs/Quaternion.h
  /opt/ros/noetic/include/nav_msgs/MapMetaData.h
  /opt/ros/noetic/include/nav_msgs/OccupancyGrid.h
