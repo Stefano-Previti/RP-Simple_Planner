@@ -11,6 +11,37 @@ double map_height;
 std::vector<double> dmap_vector;
 nav_msgs::OccupancyGrid::ConstPtr global_map;
 
+////////////// Definition of useful structures/////////////
+struct Pose {
+    double x;
+    double y;
+};
+
+struct Node {
+    Pose pose;
+    double cost;
+    Node* parent;
+    Node(Pose p, double c, Node* par) : pose(p), cost(c), parent(par) {}
+    bool operator>(const Node& other) const {
+        return cost > other.cost;
+    }
+};
+
+
+/////////////////////////Utility functions//////////////////////
+Pose worldToGrid(const Pose& world_pose) {
+    Pose grid_pose;
+    grid_pose.x = (world_x - global_map->info.origin.position.x) / map_resolution;
+    grid_pose.y = (world_y - global_map->info.origin.position.y) / map_resolution;
+    return grid_pose;
+}
+
+Pose gridToWorld(const Pose& grid_pose) {
+    Pose world_pose;
+    world_pose.x = global_map->info.origin.position.x + grid_x * map_resolution;
+    world_pose.y = global_map->info.origin.position.y + grid_y * map_resolution;
+    return world_pose;
+}
 
 ///////////////////////Distance map/////////////////////
 std::vector<double> distance_map(string filename, float resolution, float dmax) {
@@ -29,10 +60,6 @@ std::vector<double> distance_map(string filename, float resolution, float dmax) 
   std::reverse(dmap_vector.begin(), dmap_vector.end());  
   return dmap_vector;
 }
-
-
-
-
 
 
 
@@ -86,6 +113,9 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map)
 
 
 
+
+
+///////////////////////Main///////////////////////////////
    int main(int argc, char **argv) {
     ros::init(argc, argv, "my_node");
 
