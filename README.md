@@ -1,6 +1,6 @@
 # RP-Simple_Planner   
 
-##Description of the project
+## Description of the project
 This project implements a ROS node called "my_node" that performs path planning using the Uniform Cost Search algorithm. Here's a brief description of its functionalities:
   1)Header Files: Includes necessary ROS and geometry-related header files.
   2)Global Variables: Declares global variables for map-related parameters, distance map vector, and flags for initial and goal pose reception.
