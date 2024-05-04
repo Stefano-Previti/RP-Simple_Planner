@@ -19,7 +19,7 @@ This project implements a ROS node called "my_node" that performs path planning 
   
   8)**Callback Functions**: Defines callback functions to receive map, initial pose, and goal pose messages.
   
-  9)**Main**: Initializes the ROS node and sets up subscribers and publishers. It waits for initial and goal poses and the map. Once received, it computes the path using the distance map and search       algorithm.If a path is found, it publishes and logs the path; otherwise, it logs a warning.
+  9)**Main**: Initializes the ROS node and sets up subscribers and publishers. It waits for initial and goal poses and the map. Once received, it computes the path using the distance map and search algorithm. If a path is found, it publishes and logs the path; otherwise, it logs a warning.
   
 **This node is meant to be executed as part of a ROS system for robot navigation, where it plans a path based on received map data and user-defined initial and goal poses.**
 
