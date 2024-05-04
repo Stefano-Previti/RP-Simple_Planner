@@ -31,14 +31,15 @@ To run the RP-Simple_Planner, navigate to the RP_Simple_Planner directory and fo
 
 2)Launch RVIZ to visualize the robot's environment and planned paths with the command **rosrun rviz rviz**
 
-3)Run the map server node to provide the map data over the /map topic to RVIZ with the command  **rosrun map_server map_server file_yaml/map.yaml**
+3)Run the map server node to provide the map data over the /map topic to RVIZ with the command  **rosrun map_server map_server file_yaml/map.yaml** for theDIAG map and **rosrun map_server map_server file_yaml/map2.yaml** for the maze map
 
-4)Navigate to the catkin_ws directory,build and run the ros_node executable with the desired parameters for dmax and constant:
+4)Navigate to the catkin_ws directory,build and run the ros_node executable with the desired parameters for **dmax** ,the **constant** in the computation of the cost function and the **MapID** in order to load one of the two image(1 for the DIAG_map and 2 for the maze_map):
 
      **catkin build**
      
      **source devel/setup.bash**
-     
-     **rosrun ros_node ros_node 0.5 1.5**
+  
+     Example of running
+     **rosrun ros_node ros_node 0.5 1.5 1**
      
 After launching the ros_node executable, configure RVIZ to subscribe to the relevant topics. Add a MAP component subscribing to the /map topic and a PATH component subscribing to the /path topic. Use the RVIZ user interface buttons to set the initial and goal poses, and the algorithm will compute the path. Once the algorithm completes, the planned path will be displayed in RVIZ.

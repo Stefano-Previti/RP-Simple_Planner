@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_84812/fast && /usr/bin/make -f CMakeFiles/cmTC_84812.dir/build.make CMakeFiles/cmTC_84812.dir/build
+Run Build Command(s):/usr/bin/make cmTC_354a6/fast && /usr/bin/make -f CMakeFiles/cmTC_354a6.dir/build.make CMakeFiles/cmTC_354a6.dir/build
 make[1]: Entering directory '/home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_84812.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_84812.dir/src.c.o   -c /home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_84812
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84812.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_84812.dir/src.c.o  -o cmTC_84812 
-/usr/bin/ld: CMakeFiles/cmTC_84812.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_354a6.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_354a6.dir/src.c.o   -c /home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_354a6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_354a6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_354a6.dir/src.c.o  -o cmTC_354a6 
+/usr/bin/ld: CMakeFiles/cmTC_354a6.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_84812.dir/build.make:87: cmTC_84812] Error 1
+make[1]: *** [CMakeFiles/cmTC_354a6.dir/build.make:87: cmTC_354a6] Error 1
 make[1]: Leaving directory '/home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_84812/fast] Error 2
+make: *** [Makefile:121: cmTC_354a6/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2ea84/fast && /usr/bin/make -f CMakeFiles/cmTC_2ea84.dir/build.make CMakeFiles/cmTC_2ea84.dir/build
+Run Build Command(s):/usr/bin/make cmTC_8e376/fast && /usr/bin/make -f CMakeFiles/cmTC_8e376.dir/build.make CMakeFiles/cmTC_8e376.dir/build
 make[1]: Entering directory '/home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2ea84.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2ea84.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_2ea84
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ea84.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2ea84.dir/CheckFunctionExists.c.o  -o cmTC_2ea84  -lpthreads 
+Building C object CMakeFiles/cmTC_8e376.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8e376.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8e376
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e376.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8e376.dir/CheckFunctionExists.c.o  -o cmTC_8e376  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_2ea84.dir/build.make:87: cmTC_2ea84] Error 1
+make[1]: *** [CMakeFiles/cmTC_8e376.dir/build.make:87: cmTC_8e376] Error 1
 make[1]: Leaving directory '/home/lattinone/RP-Simple_Planner/catkin_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_2ea84/fast] Error 2
+make: *** [Makefile:121: cmTC_8e376/fast] Error 2
 
 
 

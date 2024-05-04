@@ -184,13 +184,14 @@ void goalPoseCallback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
    int main(int argc, char **argv) {
     ros::init(argc, argv, "my_node");
     
-    if (argc < 3) {
-    ROS_ERROR("User must enter 2 arguments:dmax and constant!");
+    if (argc < 4) {
+    ROS_ERROR("User must enter 3 arguments:dmax,constant and MapID!");
     return -1;
 }
     // Parse user arguments
     double dmax = atof(argv[1]);
     double constant=atof(argv[2]);
+    int MapID=atof(argv[3]);
  
     // NodeHandle and Subscriber setup
     ros::NodeHandle nh;
@@ -217,7 +218,11 @@ void goalPoseCallback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
     // Load and process the distance map
     std::vector<geometry_msgs::PoseStamped> path;
     try {
-        dmap_vector = distance_map("/home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/DIAG_map.png", map_resolution, dmax);
+        if(MapID==1){
+         dmap_vector = distance_map("/home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/DIAG_map.png", map_resolution, dmax);
+        }else{
+        dmap_vector = distance_map("/home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/maze.png", map_resolution, dmax);
+        }
        path = uniformCostSearch(initial_pose, goal_pose,constant);
      } catch (const std::exception& e) {
         ROS_ERROR("Exception: %s", e.what());
