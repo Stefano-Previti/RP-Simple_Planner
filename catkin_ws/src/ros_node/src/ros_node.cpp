@@ -1,11 +1,15 @@
 #include <ros/ros.h>
 #include <nav_msgs/OccupancyGrid.h>
+#include <nav_msgs/Path.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <cmath>
-#include <limits> 
+#include <queue>
+#include <unordered_map>
+#include <functional>
 #include "rp_loc/dmap_localizer.h"
 #include "rp_base/grid_map.h"
+
 
 double map_resolution;
 double map_width;
@@ -14,7 +18,7 @@ std::vector<double> dmap_vector;
 nav_msgs::OccupancyGrid::ConstPtr global_map;
 bool initial_pose_received = false, goal_pose_received = false;
 
-////////////// Definition of useful structures/////////////
+///////////////// Definition of useful structures///////////////
 struct Pose {
     double x;
     double y;
@@ -31,22 +35,22 @@ struct Node {
 };
 
 
-/////////////////////////Utility functions//////////////////////
+//////////////////////////Utility functions///////////////////////
 Pose worldToGrid(const Pose& world_pose) {
     Pose grid_pose;
-    grid_pose.x = (world_pose.x - global_map->info.origin.position.x) / map_resolution;
-    grid_pose.y = (world_pose.x - global_map->info.origin.position.y) / map_resolution;
+    grid_pose.x = std::round((world_pose.x - global_map->info.origin.position.x) / map_resolution);
+    grid_pose.y = std::round((world_pose.y - global_map->info.origin.position.y) / map_resolution);
     return grid_pose;
 }
 
 Pose gridToWorld(const Pose& grid_pose) {
     Pose world_pose;
     world_pose.x = global_map->info.origin.position.x + grid_pose.x * map_resolution;
-    world_pose.y = global_map->info.origin.position.y + grid_pose.x * map_resolution;
+    world_pose.y = global_map->info.origin.position.y + grid_pose.y * map_resolution;
     return world_pose;
 }
 
-///////////////////////Distance map/////////////////////
+/////////////////////////Distance map//////////////////////////
 std::vector<double> distance_map(string filename, float resolution, float dmax) {
   //Load the map image and calculate the grid map of the distances
   GridMap grid_map(0,0,resolution);
@@ -67,14 +71,8 @@ std::vector<double> distance_map(string filename, float resolution, float dmax) 
 
 
 
-////////////////////Cost function///////////////////////
-double cost_function(double current_x, double current_y) {
-
-    // Check if indices are within the bounds of the map dimensions
-    if (current_x < 0 || current_x >= map_width || current_y < 0 || current_y >= map_height) {
-        // Handle out-of-bounds error, return infinite cost for out of bounds
-        return std::numeric_limits<double>::infinity();
-    }
+//////////////////////////Cost function//////////////////////////
+double cost_function(double current_x, double current_y,double constant) {
 
     // Calculate the index and acces the element in the dmap_vector
     int index = current_x * map_width + current_y;
@@ -83,17 +81,69 @@ double cost_function(double current_x, double current_y) {
     // Normalize the element value
     element = element / 255.0;
     
-    // Check for the presence of an obstacle
-    if (element == 0) {
-        // Return infinite cost if on an obstacle
-        return std::numeric_limits<double>::infinity();
-    }
-    
     // Calculate exponential cost based on the element with a costant to adjust the result
-    double cost = exp(-10 * element);
+    double cost = exp(-constant * element);
     
     // Return the calculated cost
     return cost;
+}
+
+
+////////////////////////////////UCS//////////////////////////////////
+std::vector<geometry_msgs::PoseStamped> uniformCostSearch(const Pose& start, const Pose& goal,double constant) {
+    std::priority_queue<Node, std::vector<Node>, std::greater<Node>> frontier;
+    std::unordered_map<int, bool> visited;
+
+    Pose grid_start = worldToGrid(start);
+    Pose grid_goal = worldToGrid(goal);
+
+    frontier.push(Node(grid_start, 0.0, nullptr));
+
+    while (!frontier.empty()) {
+        Node current = frontier.top();
+        frontier.pop();
+
+        int idx = current.pose.y * map_width + current.pose.x;
+
+        if (visited[idx]) {
+            continue;
+        }
+        visited[idx] = true;
+
+
+        if (current.pose.x == grid_goal.x && current.pose.y == grid_goal.y) {
+            // Backtrack to find the path if you find the goal
+            std::vector<geometry_msgs::PoseStamped> path;
+            for (Node* n = &current; n != nullptr; n = n->parent) {
+                geometry_msgs::PoseStamped poseStamped;
+                Pose world_pose = gridToWorld(n->pose);
+                poseStamped.pose.position.x = world_pose.x;
+                poseStamped.pose.position.y = world_pose.y;
+                poseStamped.header.stamp = ros::Time::now();
+                poseStamped.header.frame_id = "map";
+                path.push_back(poseStamped);
+            }
+            std::reverse(path.begin(), path.end());
+            return path;
+        }
+
+        // Explore neighbors 
+        std::vector<Pose> neighbors = {
+            {current.pose.x + 1, current.pose.y},
+            {current.pose.x - 1, current.pose.y},
+            {current.pose.x, current.pose.y + 1},
+            {current.pose.x, current.pose.y - 1}
+        };        
+        for (const auto& neighbor : neighbors) {
+        int NewIdx = neighbor.y * map_width + neighbor.x;
+            if (!visited[NewIdx]&& global_map->data[NewIdx] == 0) {
+                double cost = current.cost + cost_function(neighbor.x, neighbor.y,constant);
+                frontier.push(Node(neighbor, cost, new Node(current.pose, current.cost, current.parent)));
+            }
+        }
+    }
+
+    return {}; // return empty path if no path found
 }
 
 
@@ -101,9 +151,7 @@ double cost_function(double current_x, double current_y) {
 
 
 
-
-
-////////////////////////Callbacks////////////////////////////
+////////////////////////////////Callbacks////////////////////////////
 void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map)
 {
     global_map = map;
@@ -135,17 +183,21 @@ void goalPoseCallback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
 ///////////////////////Main///////////////////////////////
    int main(int argc, char **argv) {
     ros::init(argc, argv, "my_node");
-
+    
+    if (argc < 3) {
+    ROS_ERROR("User must enter 2 arguments:dmax and constant!");
+    return -1;
+}
     // Parse user arguments
     double dmax = atof(argv[1]);
-    double x = atof(argv[2]);
-    double y = atof(argv[3]);
-
+    double constant=atof(argv[2]);
+ 
     // NodeHandle and Subscriber setup
     ros::NodeHandle nh;
     ros::Subscriber initial_pose_subscriber = nh.subscribe("/initialpose", 1, initialPoseCallback);
     ros::Subscriber goal_pose_subscriber = nh.subscribe("/move_base_simple/goal", 1, goalPoseCallback);
     ros::Subscriber map_subscriber = nh.subscribe("/map", 1, mapCallback);
+    ros::Publisher path_publisher = nh.advertise<nav_msgs::Path>("/path", 1);
     ros::Rate rate(1); 
 
     // Wait for initial and goal poses
@@ -163,20 +215,30 @@ void goalPoseCallback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
     }
 
     // Load and process the distance map
+    std::vector<geometry_msgs::PoseStamped> path;
     try {
         dmap_vector = distance_map("/home/lattinone/RP-Simple_Planner/catkin_ws/src/ros_node/src/DIAG_map.png", map_resolution, dmax);
-    } catch (const std::exception& e) {
-        ROS_ERROR("Exception caught while loading or processing the map: %s", e.what());
+       path = uniformCostSearch(initial_pose, goal_pose,constant);
+     } catch (const std::exception& e) {
+        ROS_ERROR("Exception: %s", e.what());
         return -1;
     }
+       if (! path.empty()){
+          ROS_INFO("PATH FOUND, number of poses: %ld", path.size());
 
-    // Calculate and report cost
-    try {
-        double cost = cost_function(x, y);
-        ROS_INFO("The cost at position x=%lf, y=%lf is cost=%lf", x, y, cost);
-    } catch (const std::exception& e) {
-        ROS_ERROR("Exception caught while computing cost: %s", e.what());
-    }
+        // Publish and log the path
+        nav_msgs::Path path_msg;
+        path_msg.header.stamp = ros::Time::now();
+        path_msg.header.frame_id = "map";
+        path_msg.poses = path;
+        path_publisher.publish(path_msg);
+
+        for (const auto& pose : path) {
+            ROS_INFO("Path Pose: x=%f, y=%f", pose.pose.position.x, pose.pose.position.y);
+        }
+       }else{
+        ROS_WARN("NO PATH FOUND");
+       }
 
     ros::spin();
     return 0;
